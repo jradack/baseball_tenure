@@ -72,7 +72,8 @@ tenure_data <- roster_info |>
   group_by(PLAYERID, team_stint) |>
   mutate(
     count = row_number()
-  )
+  ) |>
+  ungroup()
 
 # Save dataset
 saveRDS(tenure_data, "data/cleaned/tenure_data.rds")
